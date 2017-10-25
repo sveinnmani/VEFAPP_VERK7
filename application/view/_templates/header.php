@@ -17,13 +17,13 @@
     <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>home/signUp">home/signup</a>
-        <a href="<?php echo URL; ?>home/login">home/login</a>
+        <!--<a href="<?php echo URL; ?>home/signUp">home/signup</a>-->
+        <!--<a href="<?php echo URL; ?>home/login">home/login</a>-->
         <a href="<?php echo URL; ?>admin">admin</a>
         <?php
             if(!isset($_SESSION['steamid'])) {
 
-            echo "welcome guest! please login<br><br>";
+            //echo "welcome guest! please login<br><br>";
             loginbutton(); //login button
     
         }  else {
