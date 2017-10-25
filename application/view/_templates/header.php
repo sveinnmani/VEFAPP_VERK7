@@ -27,7 +27,7 @@
             loginbutton(); //login button
     
         }  else {
-            include ('steamauth/userInfo.php');
+            include dirname(__FILE__).'../../../steamauth/userInfo.php';
 
              //Protected content
             echo "Welcome back " . $steamprofile['personaname'] . "</br>";
