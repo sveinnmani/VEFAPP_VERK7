@@ -78,4 +78,12 @@ class HomeController
     }
 
 
+    public function profile()
+    {
+      require APP . 'view/_templates/header.php';
+      require APP . 'view/home/profile.php';
+      require APP . 'view/_templates/footer.php';
+    }
+
+
 }

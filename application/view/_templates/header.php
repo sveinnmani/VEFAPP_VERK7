@@ -16,10 +16,20 @@
 
     <!-- navigation -->
     <div class="navigation">
-        <a href="<?php echo URL; ?>">home</a>
+        <a class='buttonNav' href="<?php echo URL; ?>">home</a>
+        <?php  
+            if (isset($_SESSION['steamid'])) {
+                # code...
+            
+
+        ?>
+        <a class='buttonNav' href="<?php echo URL; ?>home/profile">home/profile</a>
+        <?php 
+            }
+         ?>
         <!--<a href="<?php echo URL; ?>home/signUp">home/signup</a>-->
         <!--<a href="<?php echo URL; ?>home/login">home/login</a>-->
-        <a href="<?php echo URL; ?>admin">admin</a>
+        <a class='buttonNav' href="<?php echo URL; ?>admin">admin</a>
         <?php
             if(!isset($_SESSION['steamid'])) {
 
@@ -30,10 +40,10 @@
             include dirname(__FILE__).'../../../steamauth/userInfo.php';
 
              //Protected content
-            echo "Welcome back " . $steamprofile['personaname'] . "</br>";
-            echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title=""        alt="" /><br>'; // Display their avatar!
+            //echo "Welcome back " . $steamprofile['personaname'] . "</br>";
+            //echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title=""        alt="" /><br>'; // Display their avatar!
             
-            logoutbutton();
+            
 }    
 ?>  
     </div>

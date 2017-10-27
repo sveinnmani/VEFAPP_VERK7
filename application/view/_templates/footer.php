@@ -1,6 +1,6 @@
 
     <div class="footer">
-        Gunnar Þ - Tölvubrautin
+        Sveinn/Jóhann - Haust 2017
     </div>
 
     <!-- jQuery, loaded in the recommended protocol-less way -->

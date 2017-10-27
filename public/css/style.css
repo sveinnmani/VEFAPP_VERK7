@@ -13,20 +13,38 @@ body {
 .navigation {
     margin-left: 33px;
 }
-.navigation a {
-    display: inline-block;
-    padding: 8px 12px;
-    border-radius: 3px;
-    text-decoration: none;
+/*.navigation a {
+	border-radius: 3px;
+	text-decoration: none;
     font-size: 12px;
     text-transform: uppercase;
     font-weight: bold;
     border: 1px solid #454545;
     color: #454545;
     background: transparent;
+}*/
+.buttonNav {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 3px;
+	text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #454545;
+    color: #454545;
+    background: transparent;   
 }
-.navigation a:hover {
+#loginButton {
+	display: inline-block;
+    padding: 8px 0px;        
+}
+.buttonNav:hover {
     background: #454545;
+    color: #fff;
+}
+#loginButton:hover {
+	background: #454545;
     color: #fff;
 }
 .container {
