@@ -50,7 +50,7 @@
                     <div class="item">Pants</div>
                     <div class="item">Pants</div>
                     '. logoutbutton() .'
-                </div>'
+                </div>';
             
 }    
 ?>  
