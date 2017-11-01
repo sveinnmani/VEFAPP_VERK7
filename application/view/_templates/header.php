@@ -12,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>css/semantic.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>css/components/menu.css" rel="stylesheet" >
+    <link href="<?php echo URL; ?>css/components/input.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>css/components/dropdown.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>css/components/icon.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>css/components/button.css" rel=" stylesheet">
+    <link href="<?php echo URL; ?>css/components/transition.css" rel="stylesheet">
 </head>
 <body>
 
@@ -55,3 +61,4 @@
 }    
 ?>  
     </div>
+<script src="<?php echo URL; ?>css/semantic.js"></script>
