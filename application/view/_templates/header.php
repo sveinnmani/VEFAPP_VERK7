@@ -43,9 +43,14 @@
              //Protected content
             //echo "Welcome back " . $steamprofile['personaname'] . "</br>";
             //echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title=""        alt="" /><br>'; // Display their avatar!
-            echo "<img class='ui avatar image' src=".$steamprofile['avatarfull'].">
-            <span>" . $steamprofile['personaname'] . "</span>";
-            
+            echo'<img class="ui avatar image" src="'.$steamprofile['avatarfull'].'">';
+            echo'<span>'. $steamprofile['personaname'] .'</span> <i class="dropdown icon"></i>';
+            echo'<div class="menu">
+                    <div class="item">Profile</div>
+                    <div class="item">Pants</div>
+                    <div class="item">Pants</div>
+                    '. logoutbutton() .'
+                </div>'
             
 }    
 ?>  
