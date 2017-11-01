@@ -2,11 +2,10 @@
     require dirname(__FILE__).'../../../steamauth/steamauth.php';
     # You would uncomment the line beneath to make it refresh the data every time the page is loaded
     // unset($_SESSION['steam_uptodate']);
-   /* $url = ' http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=AFF824E1547B93172F0918DE382825BF&steamid='. $steamprofile['steamid'] .'&format=json'; //replace "CLIENT-ID"
+    /*$url = ' http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=AFF824E1547B93172F0918DE382825BF&steamid='. $steamprofile['steamid'] .'&format=json'; //replace "CLIENT-ID"
     $json = file_get_contents($url);
     $ownedGames = json_decode($json, true);*/
 
-?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
