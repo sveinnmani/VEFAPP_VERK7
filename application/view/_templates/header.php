@@ -11,6 +11,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>css/semantic.css" rel="stylesheet">
 </head>
 <body>
 
@@ -42,6 +43,8 @@
              //Protected content
             //echo "Welcome back " . $steamprofile['personaname'] . "</br>";
             //echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title=""        alt="" /><br>'; // Display their avatar!
+            echo "<img class='ui avatar image' src=".$steamprofile['avatarfull'].">
+            <span>" . $steamprofile['personaname'] . "</span>";
             
             
 }    
