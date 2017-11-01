@@ -2,6 +2,11 @@
     require dirname(__FILE__).'../../../steamauth/steamauth.php';
     # You would uncomment the line beneath to make it refresh the data every time the page is loaded
     // unset($_SESSION['steam_uptodate']);
+   /* $url = ' http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=AFF824E1547B93172F0918DE382825BF&steamid='. $steamprofile['steamid'] .'&format=json'; //replace "CLIENT-ID"
+    $json = file_get_contents($url);
+    $ownedGames = json_decode($json, true);*/
+
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,12 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>css/semantic.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>css/components/menu.css" rel="stylesheet" >
-    <link href="<?php echo URL; ?>css/components/input.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>css/components/dropdown.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>css/components/icon.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>css/components/button.css" rel=" stylesheet">
-    <link href="<?php echo URL; ?>css/components/transition.css" rel="stylesheet">
 </head>
 <body>
 
@@ -49,16 +48,21 @@
              //Protected content
             //echo "Welcome back " . $steamprofile['personaname'] . "</br>";
             //echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title=""        alt="" /><br>'; // Display their avatar!
-            echo'<img class="ui avatar image" src="'.$steamprofile['avatarfull'].'">';
-            echo'<span>'. $steamprofile['personaname'] .'</span> <i class="dropdown icon"></i>';
-            echo'<div class="menu">
-                    <div class="item">Profile</div>
-                    <div class="item">Pants</div>
-                    <div class="item">Pants</div>
-                    '. logoutbutton() .'
-                </div>';
+            echo "<img class='ui avatar image' src=".$steamprofile['avatarfull'].">";
             
+
+            echo '<div class="ui simple dropdown item">
+                    <span>' . $steamprofile['personaname'] . '</span>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                    <div class="item">Choice 1</div>
+                    <div class="item">Choice 2</div>
+                    <div class="item">Choice 3</div>
+                    </div>
+                    </div>
+                    </div>';
+            
+        
 }    
 ?>  
     </div>
-<script src="<?php echo URL; ?>css/semantic.js"></script>
