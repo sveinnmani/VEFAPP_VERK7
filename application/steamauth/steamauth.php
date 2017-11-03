@@ -3,8 +3,12 @@ ob_start();
 session_start();
 
 function logoutbutton() {
+<<<<<<< HEAD
 	echo "<a class='item' href='?log'>Logout</a>
 	"; //logout button
+=======
+	echo "<form class='item' action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
+>>>>>>> origin/master
 }
 
 function loginbutton($buttonstyle = "square") {
