@@ -16,21 +16,21 @@
 <body>
 
     <!-- navigation -->
-    <div class="navigation">
-        <a class='buttonNav' href="<?php echo URL; ?>">home</a>
+    <div class="ui secondary pointing menu">
+        <a class="item"  href="<?php echo URL; ?>">home</a>
         <?php  
             if (isset($_SESSION['steamid'])) {
                 # code...
             
 
         ?>
-        <a class='buttonNav' href="<?php echo URL; ?>home/profile">home/profile</a>
+        <a class='item' href="<?php echo URL; ?>home/profile">home/profile</a>
         <?php 
             }
          ?>
         <!--<a href="<?php echo URL; ?>home/signUp">home/signup</a>-->
         <!--<a href="<?php echo URL; ?>home/login">home/login</a>-->
-        <a class='buttonNav' href="<?php echo URL; ?>admin">admin</a>
+        <a class='item' href="<?php echo URL; ?>admin">admin</a>
         <?php
             if(!isset($_SESSION['steamid'])) {
 
@@ -45,19 +45,21 @@
             //echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title=""        alt="" /><br>'; // Display their avatar!
             echo "<img class='ui avatar image' src=".$steamprofile['avatarfull'].">";
             
-
             echo '<div class="ui simple dropdown item">
                     <span>' . $steamprofile['personaname'] . '</span>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                    <div class="item">Choice 1</div>
+                    <div class="item" href="<?php echo URL; ?>home/profile">home/profile">Profile</div>
                     <div class="item">Choice 2</div>
                     <div class="item">Choice 3</div>
+                    <div class="item">
+                        ' . loginbutton() . '
+                    </div>
                     </div>
                     </div>
                     </div>';
             
-        
 }    
 ?>  
     </div>
+<script src="<?php echo URL; ?>css/semantic.js"></script>
