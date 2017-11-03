@@ -49,17 +49,16 @@
                     <span>' . $steamprofile['personaname'] . '</span>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                    <div class="item" href="<?php echo URL; ?>home/profile">home/profile">Profile</div>
+                    <div class="item">' ?>
+                     <a class="item" href="<?php echo URL; ?>home/profile">home/profile</a></div>
                     <div class="item">Choice 2</div>
                     <div class="item">Choice 3</div>
-                    <div class="item">
-                        ' . loginbutton() . '
-                    </div>
+                    <div class="item"><?php logoutbutton();
+                    echo '</div>
                     </div>
                     </div>
                     </div>';
-            
-}    
-?>  
+            } 
+?> 
     </div>
 <script src="<?php echo URL; ?>css/semantic.js"></script>

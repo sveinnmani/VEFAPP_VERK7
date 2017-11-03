@@ -3,7 +3,8 @@ ob_start();
 session_start();
 
 function logoutbutton() {
-	echo "<form action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
+	echo "<a class='item' href='?log'>Logout</a>
+	"; //logout button
 }
 
 function loginbutton($buttonstyle = "square") {
@@ -53,7 +54,7 @@ if (isset($_GET['login'])){
 	}
 }
 
-if (isset($_GET['logout'])){
+if (isset($_GET['log'])){
 	require 'SteamConfig.php';
 	session_unset();
 	session_destroy();
