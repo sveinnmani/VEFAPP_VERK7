@@ -52,9 +52,7 @@
                     <div class="item" href="<?php echo URL; ?>home/profile">home/profile">Profile</div>
                     <div class="item">Choice 2</div>
                     <div class="item">Choice 3</div>
-                    <div class="item">
-                        ' . loginbutton() . '
-                    </div>
+                    '. logoutbutton(); .'
                     </div>
                     </div>
                     </div>';
