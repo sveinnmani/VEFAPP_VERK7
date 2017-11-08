@@ -10,6 +10,41 @@ if (isset($_SESSION["steamid"])) {
             $playtime[] = $gameowned['response']['games'][$i]['playtime_forever'];
         }
 
+       
+        $ach_url = 'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=' . $appid[2] . '&key=AFF824E1547B93172F0918DE382825BF&steamid=' . $steamprofile['steamid'];
+        	$ach_json = file_get_contents($ach_url);
+        	$achievGame = json_decode($ach_json, true);
+        
+        if(!empty($achievGame)){
+  			echo 'Nothing here!';   
+		} else {
+  			echo 'Yep, found it!';
+		}
+        
+
+        
+
+      
+        $achievName = $achievGame['playerstats']['achievements'][0]['name'];
+
+
+        $achieve_url = 'http://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=AFF824E1547B93172F0918DE382825BF&appid='. $appid[3];
+        $achieve_json = file_get_contents($achieve_url);
+        $achieveArray = json_decode($achieve_json, true);
+            
+
+        /*for ($i=0; $i < $totalgame; $i++) { 
+            $url1[] = 'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=' . $appid[$i] . '&key=AFF824E1547B93172F0918DE382825BF&steamid='. $steamprofile['steamid'];
+            $json1[] = file_get_contents($url1[$i]);
+            $achievGame[] = json_decode($json1[$i], true);
+
+            $achievName[] = $achievGame[1]['achievements'][$i]['name'];
+          
+        }*/
+
+
+       
+
 }
 ?>
 
