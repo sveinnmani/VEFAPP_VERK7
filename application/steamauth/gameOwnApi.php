@@ -10,33 +10,86 @@ if (isset($_SESSION["steamid"])) {
             $appid[] = $gameowned['response']['games'][$i]['appid'];
             $playtime[] = $gameowned['response']['games'][$i]['playtime_forever'];
         }
+        for ($i=0; $i < $totalgame; $i++) {
+            // create both cURL resources
+            $ch[] = curl_init();
+        
+            
+            // set URL and other appropriate options
+            curl_setopt($ch[$i], CURLOPT_URL, 'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=' . urlencode($appid[$i]) . '&key=AFF824E1547B93172F0918DE382825BF&steamid=' . urlencode($steamprofile['steamid']));
+            curl_setopt($ch[$i], CURLOPT_RETURNTRANSFER, true);
+            
+            //create the multiple cURL handle
+            $mh = curl_multi_init();
+            
+            //add the two handles
+            curl_multi_add_handle($mh,$ch[$i]);
+            
+            $active = null;
+            //execute the handles
 
-        $ch = curl_init();
+            do {
+                $mrc = curl_multi_exec($mh, $active);
+                
+
+                            $achievGame[] = json_decode($mrc);
+                            for ($a=0; $a < count($achievGame[$i]['playerstats']['achievements']); $a++) { 
+
+                                $achievName[] = $achievGame[$i]['playerstats']['achievements'][$a]['name'];
+                                print_r($achievName[$a]);
+                            }
+                    
+            
+            
+            } while ($mrc == CURLM_CALL_MULTI_PERFORM);
+
+            /*while ($active && $mrc == CURLM_OK) {
+                if (curl_multi_select($mh) != -1) {
+                    do {
+                        $mrc = curl_multi_exec($mh, $active);
+                        if(curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200) {
+
+                            $achievGame[] = json_decode($mrc);
+                            for ($a=0; $a < count($achievGame[$i]['playerstats']['achievements']); $a++) { 
+
+                                $achievName[] = $achievGame[$i]['playerstats']['achievements'][$a]['name'];
+                                print_r($achievName[$a]);
+                            }
+                    
+            
+                        }
+
+                    } while ($mrc == CURLM_CALL_MULTI_PERFORM);
+                }
+            }*/
+            
+            //close the handles
+            curl_multi_remove_handle($mh, $ch[$i]);
+            curl_multi_close($mh);
+
+        }
+
+        /*$ch = curl_init();
         for ($i=0; $i < $totalgame; $i++) {
             curl_setopt($ch, CURLOPT_URL, 'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=' . urlencode($appid[$i]) . '&key=AFF824E1547B93172F0918DE382825BF&steamid=' . urlencode($steamprofile['steamid']));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, $i);
-            $achieve[] = curl_exec($ch);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $achieve = curl_exec($ch);
    
             if(curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200) {
                 
 
-                $achievGame[] = json_decode($achieve[$i]);
-                echo $achievGame[]->status;
+                $achievGame[] = json_decode($achieve);
 
-                if($achievGame[$i]->status == 'OK'){
-                    for ($v=0; $v < $totalgame; $v++) {
-                        for ($a=0; $a < count($achievGame[$v]['playerstats']['achievements']); $a++) { 
+                
+                        for ($a=0; $a < count($achievGame[$i]['playerstats']['achievements']); $a++) { 
 
-                            $achievName[] = $achievGame[$v]['playerstats']['achievements'][$a]['name'];
+                            $achievName[] = $achievGame[$i]['playerstats']['achievements'][$a]['name'];
                         }
-                    }
-                }
-                else{
-                    return $achievName[] = 'dot';
-                }
+                    
+            
             }
         }
-        curl_close($ch);
+        curl_close($ch);*/
        
         /*for ($i=0; $i < $totalgame; $i++) {
 

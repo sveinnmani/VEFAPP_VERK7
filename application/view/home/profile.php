@@ -5,7 +5,7 @@
 	}
 	else
 	{
-		include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
+		require dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
 	}
 	
 	
@@ -14,7 +14,7 @@
 	<?php  
 		for ($i=0; $i < $totalgame; $i++) { 
 			echo '<div class="gameowned"> 
-					<p>Appid: ' . $achievName[$i] . '</p>
+					<p>Appid: ' . $achievName . '</p>
 					<p>Playtime: ' . $playtime[$i] . '</p>
 					<br>
 					</div>';
