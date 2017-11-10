@@ -14,12 +14,15 @@ if (isset($_SESSION["steamid"])) {
         $ch = curl_init();
         for ($i=0; $i < $totalgame; $i++) {
             curl_setopt($ch, CURLOPT_URL, 'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=' . urlencode($appid[$i]) . '&key=AFF824E1547B93172F0918DE382825BF&steamid=' . urlencode($steamprofile['steamid']));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, $i);
             $achieve[] = curl_exec($ch);
    
             if(curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200) {
-        
+                
+
                 $achievGame[] = json_decode($achieve[$i]);
+                echo $achievGame[]->status;
+
                 if($achievGame[$i]->status == 'OK'){
                     for ($v=0; $v < $totalgame; $v++) {
                         for ($a=0; $a < count($achievGame[$v]['playerstats']['achievements']); $a++) { 

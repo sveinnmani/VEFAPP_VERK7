@@ -14,7 +14,7 @@
 	<?php  
 		for ($i=0; $i < $totalgame; $i++) { 
 			echo '<div class="gameowned"> 
-					<p>Appid: ' . $achievName[1] . '</p>
+					<p>Appid: ' . $achievName[$i] . '</p>
 					<p>Playtime: ' . $playtime[$i] . '</p>
 					<br>
 					</div>';
