@@ -2,4 +2,7 @@
     <h1>Home</h1>
     <p>application/view/home/index.php</p>
     <img src="<?php echo URL;?>img/demo-image.png">
+    <?php  
+    include dirname(__FILE__).'../../../steamauth/newsApi.php'
+    ?>
 </div>
