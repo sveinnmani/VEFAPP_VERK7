@@ -28,9 +28,7 @@
         <?php 
             }
          ?>
-        <!--<a href="<?php echo URL; ?>home/signUp">home/signup</a>-->
-        <!--<a href="<?php echo URL; ?>home/login">home/login</a>-->
-        <a class='item' href="<?php echo URL; ?>admin">admin</a>
+
         <?php
             if(!isset($_SESSION['steamid'])) {
 
@@ -51,8 +49,6 @@
                     <div class="menu">
                     <div class="item">' ?>
                      <a class="item" href="<?php echo URL; ?>home/profile">home/profile</a></div>
-                    <div class="item">Choice 2</div>
-                    <div class="item">Choice 3</div>
                     <div class="item"><?php logoutbutton();
                     echo '</div>
                     </div>
