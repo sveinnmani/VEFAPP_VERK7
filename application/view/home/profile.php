@@ -5,17 +5,19 @@
 	}
 	else
 	{
-		require dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
+		include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
 	}
 	
 	
 ?>
 <div class="container">
+	<img src="">
 	<?php  
-		for ($i=0; $i < $totalgame; $i++) { 
+		for ($i=0; $i < count($gameName); $i++) { 
 			echo '<div class="gameowned"> 
-					<p>Appid: ' . $achievName . '</p>
-					<p>Playtime: ' . $playtime[$i] . '</p>
+					<img src="' . $bannerName[$i] . '">
+					<p>Game Owned: ' . $gameName[$i] . '</p>
+					<p>Total Played: ' . $playtime[$i] . '</p>
 					<br>
 					</div>';
 		}
