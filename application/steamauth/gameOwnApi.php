@@ -1,7 +1,6 @@
 <?php 
 
 if (isset($_SESSION["steamid"])) {
-        <?php 
     //error_reporting(0);
     $url = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=AFF824E1547B93172F0918DE382825BF&steamid=76561198062319125&format=json'; //replace "CLIENT-ID"
     $json = file_get_contents($url);
@@ -30,7 +29,6 @@ if (isset($_SESSION["steamid"])) {
        }
                 
     }
-?>
 }
 ?>
 
