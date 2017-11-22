@@ -1,12 +1,3 @@
-<?php	
-	if (!isset($_SESSION["steamid"])) {
-		header("location: http://174.138.67.190/SessionMini3Demo/");
-	}
-	else
-	{
-		include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
-	}
-?>
 <!DOCTYPE html>
 <html>
 	<head>

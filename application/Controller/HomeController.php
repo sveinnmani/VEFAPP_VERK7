@@ -80,6 +80,14 @@ class HomeController
 
     public function profile()
     {
+      require dirname(__FILE__).'../../../steamauth/steamauth.php';
+      
+      if (!isset($_SESSION["steamid"])) {
+            header("location: http://174.138.67.190/SessionMini3Demo/");
+      }
+     
+      include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
+      
       require APP . 'view/_templates/header.php';
       require APP . 'view/home/profile.php';
       require APP . 'view/_templates/footer.php';

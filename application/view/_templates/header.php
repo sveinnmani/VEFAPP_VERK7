@@ -1,8 +1,3 @@
-<?php
-    require dirname(__FILE__).'../../../steamauth/steamauth.php';
-    # You would uncomment the line beneath to make it refresh the data every time the page is loaded
-    // unset($_SESSION['steam_uptodate']);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
