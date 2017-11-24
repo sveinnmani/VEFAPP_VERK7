@@ -19,6 +19,7 @@ class HomeController
     public function index()
     {
         // load views
+        require dirname(__FILE__).'../../steamauth/steamauth.php';
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/index.php';
         require APP . 'view/_templates/footer.php';
@@ -80,16 +81,31 @@ class HomeController
 
     public function profile()
     {
-      require dirname(__FILE__).'../../../steamauth/steamauth.php';
-      
-      if (!isset($_SESSION["steamid"])) {
-            header("location: http://174.138.67.190/SessionMini3Demo/");
-      }
-     
-      include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
-      
+      require dirname(__FILE__).'../../steamauth/steamauth.php';
       require APP . 'view/_templates/header.php';
+      if (!isset($_SESSION["steamid"])) {
+          header("location: http://174.138.67.190/SessionMini3Demo/");
+      }
+      else
+      {
+          include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
+      }
       require APP . 'view/home/profile.php';
+      require APP . 'view/_templates/footer.php';
+    }
+
+    public function friends()
+    {
+      require dirname(__FILE__).'../../steamauth/steamauth.php';
+      require APP . 'view/_templates/header.php';
+      if (!isset($_SESSION["steamid"])) {
+          header("location: http://174.138.67.190/SessionMini3Demo/");
+      }
+      else
+      {
+          include dirname(__FILE__).'../../steamauth/friendOwnApi.php';
+      }
+      require APP . 'view/home/friends.php';
       require APP . 'view/_templates/footer.php';
     }
 

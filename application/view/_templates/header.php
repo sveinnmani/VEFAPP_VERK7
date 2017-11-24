@@ -25,7 +25,7 @@
          ?>
 
         <?php
-            if(!isset($_SESSION['steamid'])) {
+        if(!isset($_SESSION['steamid'])) {
 
             //echo "welcome guest! please login<br><br>";
             loginbutton(); //login button
@@ -43,9 +43,12 @@
                     <i class="dropdown icon"></i>
                     <div class="menu">
                     <div class="item">' ?>
-                     <a class="item" href="<?php echo URL; ?>home/profile">home/profile</a></div>
+                     <a class="item" href="<?php echo URL; ?>home/profile">Games</a></div>
+                    <div class="item">
+                    <a class="item" href="<?php echo URL; ?>home/friends">Friends</a></div>
                     <div class="item"><?php logoutbutton();
                     echo '</div>
+                    </div>
                     </div>
                     </div>
                     </div>';

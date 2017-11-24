@@ -1,12 +1,3 @@
-<?php	
-	if (!isset($_SESSION["steamid"])) {
-		header("location: http://174.138.67.190/SessionMini3Demo/");
-	}
-	else
-	{
-		include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
-	}
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,13 +9,12 @@
 			<h1 class="ui header">Your game library:</h1>
 			<div class="three column row">
 				<?php  
-					for ($i=0; $i < count($gameName); $i++) {
+					for ($i=0; $i < count($totalfriends); $i++) {
 						echo '
 							<div class="column">
 								<div class="ui segment">
-									<img src="' . $bannerName[$i] . '">
-									<h4>Game name: ' . $gameName[$i] . '</h4>
-									<h5>Total hours Played: ' . round($playtime[$i]/60) . '</h5>
+									<img src="' . $friendspic[$i] . '">
+									<h4>Friends name: ' . $friendname[$i] . '</h4>
 								</div>
 							</div>';
 
