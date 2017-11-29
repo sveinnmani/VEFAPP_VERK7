@@ -1,15 +1,15 @@
 <div class="container">
-    
+    <?php echo $error; ?>
     <h1>Login</h1>
-    <form action="<?php echo URL;?>home/login" method="post">
+    <form action="" method="post">
 
         <label for="user">Notendanafn:</label>
-        <input id="user" name="username" type="text"><br>
+        <input type="text" name="username" id="username"><br>
 
         <label for="pass">Lykilorð:</label>
-        <input id="pass" name="password" type="password"><br>
+        <input type="password" name="pwd" id="pwd"><br>
 
-        <input name="innskra" type="submit" value="Innskrá">
+        <input name="login" type="submit" id="login" value="Innskrá">
         
     </form>
 </div>

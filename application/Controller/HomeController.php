@@ -56,8 +56,8 @@ class HomeController
     */
     public function login()
     {
-        // Vinnum úr login gögnum úr forminu.
-        if(!empty($_POST['username']) && !empty($_POST['password'])){
+      /*
+      if(!empty($_POST['username']) && !empty($_POST['password'])){
 
           // hér kæmi authentication (vantar að útfæra)
           
@@ -70,12 +70,23 @@ class HomeController
           // færum okkur yfir á admin síðu (AdminController)
           header('location:'. URL.'admin/index' );
 
-        } else {
-            // load views
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/home/login.php';
-            require APP . 'view/_templates/footer.php';
-        }
+        }*/
+        $error = '';
+        
+        if (isset($_POST['login'])) {
+
+
+            $username = trim($_POST['username']);
+            $password = trim($_POST['pwd']);
+            $redirect = 'http://tskoli.is';
+            require_once dirname(__FILE__).'../../pdo_conn/authenticate_pdo.php';
+        } 
+        require dirname(__FILE__).'../../steamauth/steamauth.php';
+       
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/login.php';
+        require APP . 'view/_templates/footer.php';
+        
     }
 
 

@@ -13,6 +13,7 @@
     <!-- navigation -->
     <div class="ui secondary pointing menu">
         <a class="item"  href="<?php echo URL; ?>">home</a>
+        <a class="item"  href="<?php echo URL; ?>home/login">login</a>
         <?php  
             if (isset($_SESSION['steamid'])) {
                 # code...
@@ -22,12 +23,9 @@
         <a class='item' href="<?php echo URL; ?>home/profile">home/profile</a>
         <?php 
             }
-         ?>
+      
+        if(!isset($_SESSION['steamid'])) { 
 
-        <?php
-        if(!isset($_SESSION['steamid'])) {
-
-            //echo "welcome guest! please login<br><br>";
             loginbutton(); //login button
     
         }  else {
