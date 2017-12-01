@@ -78,7 +78,7 @@ class HomeController
 
             $username = trim($_POST['username']);
             $password = trim($_POST['pwd']);
-            $redirect = 'http://tskoli.is';
+            $redirect = 'http://174.138.67.190/SessionMini3Demo/home/write';
             require_once dirname(__FILE__).'../../pdo_conn/authenticate_pdo.php';
         } 
         require dirname(__FILE__).'../../steamauth/steamauth.php';
