@@ -90,10 +90,14 @@ class HomeController
     }
     public function write()
     {
-        require dirname(__FILE__).'../../steamauth/steamauth.php';
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/write.php';
-        require APP . 'view/_templates/footer.php';
+      require dirname(__FILE__).'../../steamauth/steamauth.php';
+      //include dirname(__FILE__).'../../view/home/databaseupload.php';
+      require APP . 'view/_templates/header.php';
+         
+
+      require APP . 'view/home/write.php';
+      
+      require APP . 'view/_templates/footer.php';
     }
 
     public function profile()
