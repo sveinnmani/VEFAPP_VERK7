@@ -14,7 +14,7 @@
 	$results = mysqli_query($con, $sql);
 
 	if (mysqli_num_rows($results) > 0) {
-		/*while ($row = mysqli_fetch_assoc($results)) {
+		while ($row = mysqli_fetch_assoc($results)) {
 		//echo "<h1>" . $row["article_title"] . "</h1> <p>" . $row["article_main"] . "</p>";
 			echo 
 			'
@@ -31,7 +31,7 @@
 				</div>	
 			</div>
 					';
-				}*/
+				}
 			} else {
 				
 			}
@@ -46,7 +46,7 @@
 		$json = file_get_contents($url);
 		$decode = json_decode($json, true);
 		
-		if ($x == 0) {
+		/*if ($x == 0) {
 			echo '<h3 class="justified row">Team Forteress 2</h3>';
 		}
 		else if ($x == 1) {
@@ -63,7 +63,7 @@
 		}
 		else if ($x == 5) {
 			echo '<h3 class="justified row">Rust</h3>';
-		}
+		}*/
 		for ($i=0; $i < count($decode['appnews']['newsitems']); $i++) { 
 			if (!empty($decode['appnews']['newsitems'][$i]['author'])) {
 				echo '
