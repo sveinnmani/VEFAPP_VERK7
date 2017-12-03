@@ -9,7 +9,8 @@
 			<h1 class="ui header">Your game library:</h1>
 			<div class="three column row">
 				<?php  
-					for ($i=0; $i < count($gameName); $i++) {
+					//echo '<div class="ui three column grid"></div>';
+					for ($i=0; $i < count($gameName); $i++) {						
 						echo '
 							<div class="column">
 								<div class="ui segment">
@@ -21,6 +22,7 @@
 
 
 					}
+					//echo '</div>';
 				?>
 			</div>
 		</div>
