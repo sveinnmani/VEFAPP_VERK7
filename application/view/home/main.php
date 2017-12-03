@@ -14,7 +14,7 @@
 	$results = mysqli_query($con, $sql);
 
 	if (mysqli_num_rows($results) > 0) {
-		while ($row = mysqli_fetch_assoc($results)) {
+		/*while ($row = mysqli_fetch_assoc($results)) {
 		//echo "<h1>" . $row["article_title"] . "</h1> <p>" . $row["article_main"] . "</p>";
 			echo 
 			'
@@ -31,7 +31,7 @@
 				</div>	
 			</div>
 					';
-				}
+				}*/
 			} else {
 				
 			}
