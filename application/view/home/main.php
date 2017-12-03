@@ -46,24 +46,24 @@
 		$json = file_get_contents($url);
 		$decode = json_decode($json, true);
 		
-		/*if ($x == 0) {
-			echo '<h3 class="justified row">Team Forteress 2</h3>';
+		if ($x == 0) {
+			echo '<h3 style="text-align = "class="header3">Team Forteress 2</h3>';
 		}
 		else if ($x == 1) {
-			echo '<h3 class="justified rowjustified row">Counter Strike Global Offensive</h3>';
+			echo '<h3 class="header3">Counter Strike Global Offensive</h3>';
 		}
 		else if ($x == 2) {
-			echo "<h3 class='justified rowjustified rowjustified row'>PLAYERUNKNOWN'S BATTLEGROUNDS</h3>";
+			echo "<h3 class='header3'>PLAYERUNKNOWN'S BATTLEGROUNDS</h3>";
 		}
 		else if ($x == 3) {
-			echo '<h3 class="justified row">Grand Theft Auto V</h3>';
+			echo '<h3 class="header3">Grand Theft Auto V</h3>';
 		}
 		else if ($x == 4) {
-			echo "<h3 class='justified row'>Garry's Mod</h3>";
+			echo "<h3 class='header3'>Garry's Mod</h3>";
 		}
 		else if ($x == 5) {
-			echo '<h3 class="justified row">Rust</h3>';
-		}*/
+			echo '<h3 class="header3">Rust</h3>';
+		}
 		for ($i=0; $i < count($decode['appnews']['newsitems']); $i++) { 
 			if (!empty($decode['appnews']['newsitems'][$i]['author'])) {
 				echo '
