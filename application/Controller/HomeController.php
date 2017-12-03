@@ -78,7 +78,7 @@ class HomeController
 
             $username = trim($_POST['username']);
             $password = trim($_POST['pwd']);
-            $redirect = 'http://174.138.67.190/SessionMini3Demo/home/write';
+            $redirect = 'http://174.138.67.190/lokaverkefni/home/write';
             require_once dirname(__FILE__).'../../pdo_conn/authenticate_pdo.php';
         } 
         require dirname(__FILE__).'../../steamauth/steamauth.php';
@@ -105,11 +105,11 @@ class HomeController
       require dirname(__FILE__).'../../steamauth/steamauth.php';
       require APP . 'view/_templates/header.php';
       if (!isset($_SESSION["steamid"])) {
-          header("location: http://174.138.67.190/SessionMini3Demo/");
+          header("location: http://174.138.67.190/lokaverkefni/");
       }
       else
       {
-          include dirname(__FILE__).'../../../steamauth/gameOwnApi.php';
+          include dirname(__FILE__).'../../steamauth/gameOwnApi.php';
       }
       require APP . 'view/home/profile.php';
       require APP . 'view/_templates/footer.php';
@@ -120,7 +120,7 @@ class HomeController
       require dirname(__FILE__).'../../steamauth/steamauth.php';
       require APP . 'view/_templates/header.php';
       if (!isset($_SESSION["steamid"])) {
-          header("location: http://174.138.67.190/SessionMini3Demo/");
+          header("location: http://174.138.67.190/lokaverkefni/");
       }
       else
       {
